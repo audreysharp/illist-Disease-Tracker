@@ -1,79 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
-    <title>Illist Map</title>
-    <link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/claro/claro.css">
-    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
-    <style>
-    html, body, #map {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-    }
-
-    #meta h3 {
-      color: #666666;
-      font-size: 1.1em;
-      padding: 0px;
-      margin: 0px;
-      display: inline-block;
-    }
-    </style>
-    <script src="http://js.arcgis.com/3.14/"></script>
-    <script>
-    require([
-        "dojo/_base/array", "esri/Color", "esri/dijit/PopupTemplate", 
-        "esri/layers/FeatureLayer", "esri/renderers/BlendRenderer",
-        "esri/map", "esri/layers/ArcGISTiledMapServiceLayer",  
-        "esri/symbols/SimpleFillSymbol", "esri/symbols/SimpleLineSymbol", "esri/symbols/SimpleMarkerSymbol", 
-        "esriRequest", 
-        "dojo/domReady!"
-    ], 
-    function (array, Color, PopupTemplate, 
-               ArcGISTiledMapServiceLayer, FeatureLayer, Map, BlendRenderer, 
-               SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol){
-
-    map = new Map("map", {
-        basemap: "osm", //"Open Street Map basemap"
-        center: [-78.70, 35.900],
-        zoom: 11
-    });
-
-    var layerUrl = "http://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Lawrence_KS_Demographic_Info/FeatureServer/0";
-
-        var request = nessieRequest({
-        // Request merchant data from Nessie API to search and add to map.
-        // Online location of the data.
-        url: "http://api.nessiebanking.com/merchants",
-        // Service parameters if required, sent with URL as key/value pairs.
-        content: {
-            lat: "-78.70",
-            long: "35.90",
-            rad: "50",
-            
-        },
-        // Data format
-        handleAs: "json"
-    });
-    
-    });
-
-       
-        
-    </script>
-  </head>
-  <body class="claro">
-    <div data-dojo-type="dijit/layout/BorderContainer" 
-         data-dojo-props="design:'headline', gutters:false"
-         style="width: 100%; height: 100%; margin: 0;">
-      <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
-      </div>
-    </div>
-  </body>
-</html> !-->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -98,27 +22,30 @@
     <script>
       var map;
 
-      require(["esri/map", "dojo/domReady!"], function(Map) {
+      require(["esri/map", "esriRequest", "dojo/domReady!"], function(Map) {
+          
         map = new Map("map", {
           basemap: "osm",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
           center: [-78.56397, 36.0086], // longitude, latitude
           zoom: 10
         });
           
-          var request = nessieRequest({
-        // Request merchant data from Nessie API to search and add to map.
-        // Online location of the data.
-        url: "http://api.nessiebanking.com/merchants",
-        // Service parameters if required, sent with URL as key/value pairs.
-        content: {
-            lat: "-78.70",
-            long: "35.90",
-            rad: "50",
+        var request = nessieRequest({
+            // Request merchant data from Nessie API to search and add to map.
+            // Online location of the data.
+            url: "http://api.nessiebanking.com/merchants",
+            // Service parameters if required, sent with URL as key/value pairs.
+            content: {
+                lat: "-78.70",
+                long: "35.90",
+                rad: "50",
             
-        },
-        // Data format
-        handleAs: "json"
-    });
+            },
+            // Data format
+            handleAs: "json"
+        });
+        
+        
       });
     </script>
   </head>
