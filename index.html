@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>IllList</title>
+        
+		<link href="stylesheet.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	<body background="images/landing_background.jpg">
+        
+        <!--Sets the location to import the bootstrapMenu-->        
+        <div class="row-fluid">
+            <div id="bootstrapMenu"></div>
+            <!--Imports the menu html file to the desired location to prevent from having to rewrite menu constantly.-->
+            <script> 
+                $(document).ready( function () {
+                    $("#bootstrapMenu").load("assets/bootstrapMenu.html #content");
+                });
+            </script>
+        </div>
+        
+        <!--Landing Page-->
+		<div class="container">
+            <div class="row" align="center">
+                <div class="col-xs-4">
+				    <img src="images/left-image.jpg" class="landing-circle">
+                    <div class="paired-description">
+                        <p class="description-head">MEDICATION</p>
+                        <p class="description">bought by sick people</p>
+                    </div>
+				</div>
+                <div class="col-xs-4">
+                    <img src="images/mid-image.jpg" class="landing-circle"> 
+                    <div class="paired-description">	
+				        <p class="description-head">PATTERNS</p>
+					   <p class="description">tracked via purchases</p>
+				    </div>
+                </div>
+                <div class="col-xs-4"></div>
+                    <img src="images/right-image.jpg" class="landing-circle"> 
+				    <div class="paired-description">
+				        <p class="description-head">PREDICTION</p>
+					   <p class="description">using outbreak maps</p>
+				    </div>
+            </div>
+        </div>
+	</body>
+</html>
