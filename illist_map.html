@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
     <title>Simple Map</title>
     <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+    
     <style>
       html, body, #map {
         height: 100%;
@@ -19,43 +20,7 @@
       }
     </style>
     <script src="http://js.arcgis.com/3.14/"></script>
-    <script>
-      var map;
-
-      require(["esri/map","esri/request", "dojo/domReady!"], function(Map, esriRequest) {
-          
-        map = new Map("map", {
-          basemap: "osm",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
-          center: [-78.56397, 35.9086], // longitude, latitude
-          zoom: 10
-        });
-        
-        var nessieRequest = esriRequest({
-            // Request merchant data from Nessie API to search and add to map.
-            // Online location of the data.
-            url: "http://api.nessiebanking.com/merchants",
-            // Service parameters if required, sent with URL as key/value pairs.
-            content: {
-                lat: "-78.70",
-                long: "35.90",
-                rad: "50",
-            },
-            // Data format
-            handleAs: "json"
-        });
-        
-        function requestSucceeded(data) {
-            console.log("Data: ", data); // print the data to browser's console
-        }
-        
-        function requestFailed(error) {
-            console.log("Error: ", error.message);
-        }
-        
-        nessieRequest.then(requestSucceeded, requestFailed);
-        
-      });
-    </script>
+    <script src="illist_map.js"></script>
   </head>
   <body>
     <div id="map"></div>
