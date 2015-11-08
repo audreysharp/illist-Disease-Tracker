@@ -1,4 +1,4 @@
 # illist-Disease-Tracker  
 ###A Hack Duke submission
 
-Website for tracking diease data from nessie transacition history.
+Website for tracking disease data from Nessie transaction history.
