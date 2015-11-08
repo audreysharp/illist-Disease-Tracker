@@ -22,15 +22,15 @@
     <script>
       var map;
 
-      require(["esri/map", "esriRequest", "dojo/domReady!"], function(Map) {
+      require(["esri/map","esri/request", "dojo/domReady!"], function(Map, esriRequest) {
           
         map = new Map("map", {
           basemap: "osm",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
-          center: [-78.56397, 36.0086], // longitude, latitude
+          center: [-78.56397, 35.9086], // longitude, latitude
           zoom: 10
         });
-          
-        var request = nessieRequest({
+        
+        var nessieRequest = esriRequest({
             // Request merchant data from Nessie API to search and add to map.
             // Online location of the data.
             url: "http://api.nessiebanking.com/merchants",
@@ -39,17 +39,24 @@
                 lat: "-78.70",
                 long: "35.90",
                 rad: "50",
-            
             },
             // Data format
             handleAs: "json"
         });
         
+        function requestSucceeded(data) {
+            console.log("Data: ", data); // print the data to browser's console
+        }
+        
+        function requestFailed(error) {
+            console.log("Error: ", error.message);
+        }
+        
+        nessieRequest.then(requestSucceeded, requestFailed);
         
       });
     </script>
   </head>
-
   <body>
     <div id="map"></div>
   </body>
