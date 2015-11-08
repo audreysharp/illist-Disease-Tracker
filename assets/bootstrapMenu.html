@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-default" id="content">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!--This is the part that autocollapses the menu and sets up the
+                    buttons.-->
+                <button type="button" 
+                        class="navbar-toggle collapsed" 
+                        data-toggle="collapsed" 
+                        data-target="menu"
+                        aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">The IllList</a>
+            </div>
+            <!--The part of the navbar that collapses on mobile.-->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" 
+                           class="dropdown-toggle" 
+                           data-toggle="dropdown" 
+                           role="button" 
+                           aria-haspopup="true" 
+                           aria-expanded="false">Diseases
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="cold.html">Cold</a></li>
+                            <li><a href="flu.html">Flu</a></li>
+                            <li><a href="strep.html">Streptococcus</a></li>
+                            <li><a href="menengitis.html">Menengitis</a></li>
+                            <li><a href="hiv.html">HIV</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
