@@ -2,24 +2,35 @@
 
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>IllList</title>
+        
 		<link href="stylesheet.css" rel="stylesheet">
-        <link href='https://fonts.googleapis.com/css?family=Lato' 
-			rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" 
-			href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="css/bootstrap.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <title>illist</title>
 	</head>
-
 	<body background="images/landing_background.jpg">
-
-		<header>
-			<!--HEADER STUFF HERE-->
-		</header>
-
+        
+        <!--Sets the location to import the bootstrapMenu-->        
+        <div class="row-fluid">
+            <div id="bootstrapMenu"></div>
+            <!--Imports the menu html file to the desired location to prevent from having to rewrite menu constantly.-->
+            <script> 
+                $(document).ready( function () {
+                    $("#bootstrapMenu").load("assets/bootstrapMenu.html #content");
+                });
+            </script>
+        </div>
+        
+        <!--Landing Page-->
 		<div class="container">
-            <div class="row">
+            <div class="row" align="center">
                 <div class="col-xs-4">
 				    <img src="images/left-image.jpg" class="landing-circle">
                     <div class="paired-description">
@@ -40,42 +51,7 @@
 				        <p class="description-head">PREDICTION</p>
 					   <p class="description">using outbreak maps</p>
 				    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="dropdown" align="center">
-	               <button class="btn btn-default dropdown-toggle" 
-                           type="button" 
-                           id="menu1" 
-                           data-toggle="dropdown">
-                       Illness
-                       <span class="caret"></span>
-                    </button>
-	                <ul class="dropdown-menu" 
-                       role="menu" 
-                       aria-labelledby="menu1" 
-                       align="center">
-                       <li role="option">
-                           <a role="menuitem" href="#">Cold</a>
-                       </li>
-                       <li role="option">
-                           <a role="menuitem" href="#">Flu</a>
-                       </li>
-                       <li role="option">
-                           <a role="menuitem" href="#">Strep</a>
-                       </li>
-                       <li role="option">
-                           <a role="menuitem" href="#">Meningitis</a>
-                       </li>
-                       <li role="option">
-                           <a role="menuitem" href="#">HIV</a>
-                       </li>
-                    </ul>
-                </div>
             </div>
         </div>
-        
-        <div class="gray-block"></div>
-
 	</body>
 </html>
